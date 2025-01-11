@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());     //middleware  ,to instruct the app to use this json
 
 
-mongoose.connect("mongodb://localhost:27017/expense").then(()=>{
+mongoose.connect("mongodb+srv://mkaviyarasu068:USER@cluster0.nefr26o.mongodb.net/expense").then(()=>{
     console.log("connected to data base!");
 });
 
@@ -106,6 +106,8 @@ app.delete("/api/expenses/:id", async (req, res) => {
         res.status(500).json({ error: "Failed to delete expense" });
     }
 });
+
+
 app.listen(3000, () => {
     console.log("It's running bro");
 });
